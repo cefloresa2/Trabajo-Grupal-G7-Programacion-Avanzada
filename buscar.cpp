@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include "alumno.h"
+#include "factura.h"
 using namespace std;
 int main() {
 	tRegistro registro;
 	fstream archivo;
-	archivo.open("bd.dat", ios::in | ios::out | ios::binary);
+	archivo.open("basedatosfactura.dat", ios::in | ios::out | ios::binary);
 	archivo.seekg(0, ios::end);
 	int pos = archivo.tellg();
 	int numReg = pos / SIZE;

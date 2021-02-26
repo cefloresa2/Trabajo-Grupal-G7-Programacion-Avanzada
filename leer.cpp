@@ -1,12 +1,13 @@
 #include <iostream>
 #include <fstream>
-#include "alumno.h"
+#include "cliente.h"
 using namespace std;
  
 int main() {
     tRegistro registro;
     fstream archivo;
-    archivo.open("bd.dat", ios::in | ios::binary);
+    //c++ mostrardatos() de cliente
+    archivo.open("basedatoscliente.dat", ios::in | ios::binary);
     archivo.read((char *) &registro, SIZE);
     int cuantos = archivo.gcount();
     while (cuantos == SIZE) {

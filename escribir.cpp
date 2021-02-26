@@ -1,27 +1,37 @@
 #include <iostream>
 #include <fstream>
-#include "alumno.h"
+#include "cliente.h"
 using namespace std;
- 
+
 int main(){
     tRegistro registro;
     fstream archivo;
-    archivo.open("bd.dat", ios::out | ios::binary);
+    archivo.open("basedatoscliente.dat", ios::out | ios::binary);
     bool seguir = true;
     while (seguir) {
-        cout << "Codigo: ";
-        cin.sync();
-        cin >> registro.codigo;
-        cout << "Nombre: ";
-        cin.sync();
-        cin.getline(registro.nombre, MAX); // MAX: 80
-        cout << "Promedio: ";
-        cin.sync();
-        cin >> registro.promedio;
-        archivo.write((char *) &registro, SIZE);
-        cout << "Otro [S/N]? ";
+    	//leerdatos() de cliente
+        cout<<"Dni: "; cin.sync();
+		cin>>registro.dni;
+
+		cout<<"Nombre: "; cin.sync();
+		cin.getline(registro.nombre, 30); // MAX: 80
+
+		cout<<"Apellido Paterno: "; cin.sync();
+		cin.getline(registro.apellido, 30); // MAX: 80
+		
+		cout<<"Apellido Materno: "; cin.sync();
+		cin.getline(registro.apellido2, 30); // MAX: 80
+
+		cout<<"Telefono: "; cin.sync();
+		cin>>registro.telefono;
+		
+		cout<<"Correo: "; cin.sync();
+		cin.getline(registro.correo, 30); // MAX: 80
+
+		archivo.write((char *) &registro, SIZE);
+        cout<<"Otro [S/N]? ";
         char c;
-        cin >> c;
+        cin>>c;
         if ((c == 'n') || (c == 'N')) {
             seguir = false;
         }
