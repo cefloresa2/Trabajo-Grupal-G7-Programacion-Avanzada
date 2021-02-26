@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+htfrhtf#includefghhfhfghfghfgh <math.h>
 #include <string>
 #include <conio.h>
 #include <stdlib.h>
